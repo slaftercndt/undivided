@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #1c2224;
+  --gold: #b38e3d;
+  --parchment: #f5f1e8;
+  --stone: #6b6e70;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* offset anchor targets so fixed nav doesn't cover headings */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-parchment text-ink font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgba(179, 142, 61, 0.24);
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif;
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  /* section vertical rhythm — generous whitespace carries the gravitas */
+  .section {
+    @apply px-6 py-24 sm:px-8 md:py-32;
+  }
+
+  .container-editorial {
+    @apply mx-auto w-full max-w-6xl;
+  }
+
+  /* the quiet, small-caps eyebrow used above section headings */
+  .eyebrow {
+    @apply font-sans text-xs uppercase tracking-widest2 text-gold;
+  }
+
+  /* underlined gold link used sparingly for inline links / CTAs */
+  .link-gold {
+    @apply relative inline-flex items-center gap-2 text-gold transition-opacity hover:opacity-70;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* hairline rule in gold, used to divide editorial blocks */
+  .rule-gold {
+    @apply h-px w-16 border-0 bg-gold;
+  }
+}
+
+/* respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
