@@ -1,48 +1,97 @@
 import { Reveal } from "./Reveal";
-import { team } from "@/lib/team";
-
-/** Derive initials for the quiet monogram placeholder. */
-function initials(name: string) {
-  const parts = name.trim().split(/\s+/);
-  const chars = parts.length > 1 ? parts[0][0] + parts[parts.length - 1][0] : parts[0][0];
-  return chars.toUpperCase();
-}
+import { principal, partners, advisors } from "@/lib/team";
 
 export function Team() {
   return (
     <section id="team" className="section">
       <div className="container-editorial">
         <Reveal>
-          <p className="eyebrow">Team</p>
+          <p className="eyebrow">The Firm</p>
           <hr className="rule-gold mt-6" />
           <h2 className="mt-8 max-w-3xl font-serif text-4xl font-light leading-tight text-ink sm:text-5xl">
-            A founder-led firm — with a team behind the thesis.
+            One thesis. A firm built to carry it.
           </h2>
         </Reveal>
 
-        <ul className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {team.map((member, i) => (
-            <Reveal as="li" key={member.name} delay={i * 0.08}>
-              <article className="flex h-full flex-col rounded-sm border border-ink/10 bg-white/40 p-8">
-                <div
-                  aria-hidden
-                  className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/40 font-serif text-lg text-gold"
-                >
-                  {initials(member.name)}
+        {/* Principal — full-width editorial statement, not a card */}
+        <Reveal>
+          <div className="mt-16 grid gap-8 border-t border-ink/20 pt-10 md:grid-cols-12">
+            <div className="md:col-span-5">
+              <h3 className="font-serif text-4xl font-light text-ink sm:text-5xl">
+                {principal.name}
+              </h3>
+              <p className="mt-3 text-sm uppercase tracking-widest2 text-gold">
+                {principal.role}
+              </p>
+            </div>
+            <div className="md:col-span-6 md:col-start-7">
+              <p className="font-serif text-2xl font-light leading-snug text-ink">
+                {principal.mandate}
+              </p>
+              <p className="mt-5 text-base leading-relaxed text-ink/70">
+                {principal.bio}
+              </p>
+              {principal.lineage && (
+                <p className="mt-5 border-l-2 border-gold pl-4 text-sm italic text-stone">
+                  {principal.lineage}
+                </p>
+              )}
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Partners — ruled rows, each led by a mandate */}
+        <ul className="mt-14">
+          {partners.map((partner, i) => (
+            <Reveal as="li" key={partner.name} delay={i * 0.08}>
+              <div className="grid gap-6 border-t border-ink/15 py-10 md:grid-cols-12">
+                <div className="md:col-span-5">
+                  <h3 className="font-serif text-3xl font-light text-ink">
+                    {partner.name}
+                  </h3>
+                  <p className="mt-2 text-sm uppercase tracking-widest2 text-gold">
+                    {partner.role}
+                  </p>
                 </div>
-                <h3 className="mt-6 font-serif text-2xl font-normal text-ink">
-                  {member.name}
-                </h3>
-                <p className="mt-1 text-sm uppercase tracking-widest text-gold">
-                  {member.role}
-                </p>
-                <p className="mt-4 text-base leading-relaxed text-stone">
-                  {member.bio}
-                </p>
-              </article>
+                <div className="md:col-span-6 md:col-start-7">
+                  <p className="font-serif text-xl font-light leading-snug text-ink">
+                    {partner.mandate}
+                  </p>
+                  <p className="mt-4 text-base leading-relaxed text-ink/70">
+                    {partner.bio}
+                  </p>
+                </div>
+              </div>
             </Reveal>
           ))}
         </ul>
+
+        {/* Advisors & Collaborators — the bench, rendered as a roster */}
+        <Reveal>
+          <div className="border-t border-ink/15 pt-10">
+            <div className="flex flex-wrap items-baseline justify-between gap-4">
+              <h3 className="font-serif text-2xl font-light text-ink">
+                Advisors &amp; Collaborators
+              </h3>
+              <p className="text-sm text-stone">
+                Chosen for domain command, engaged by mandate.
+              </p>
+            </div>
+            <ul className="mt-8 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+              {advisors.map((advisor, i) => (
+                <li
+                  key={`${advisor.name}-${i}`}
+                  className="border-t border-ink/10 pt-4"
+                >
+                  <p className="font-sans text-base font-medium text-ink">
+                    {advisor.name}
+                  </p>
+                  <p className="mt-1 text-sm text-stone">{advisor.domain}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
