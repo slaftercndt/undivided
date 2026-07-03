@@ -3,19 +3,14 @@ export type Principal = {
   role: string;
   /** The one-line mandate — what this person owns. Tight enough to quote. */
   mandate: string;
-  /** Short bio. PLACEHOLDER where marked — swap in final copy. */
+  /** Short bio. */
   bio: string;
-  /** Lineage line, rendered quietly beneath the bio. */
-  lineage?: string;
 };
 
 export type Partner = {
   name: string;
-  role: string;
-  /** The one-line mandate — what this person owns. */
-  mandate: string;
-  /** Short bio. PLACEHOLDER where marked. */
-  bio: string;
+  /** One sharp line — who they are and what they carry. */
+  line: string;
 };
 
 export type Advisor = {
@@ -25,50 +20,47 @@ export type Advisor = {
 };
 
 /**
- * Team is tiered and data-driven: Principal leads, Partners carry named
- * mandates, Advisors & Collaborators render as a roster. Append to the
- * arrays and the layout reflows — no component changes required.
+ * Team is tiered and data-driven: Principal leads, Partners carry the work,
+ * Advisors & Collaborators render as a roster. Append to the arrays and the
+ * layout reflows — no component changes required.
  */
 
 export const principal: Principal = {
-  name: "Founder",
+  name: "Founder", // PLACEHOLDER — replace with the founder's name.
   role: "Founder & Principal",
   mandate: "Sets the thesis. Answers for the work.",
-  bio:
-    // PLACEHOLDER — replace with final founder bio.
-    "Three decades at the seam of culture and economics — building the systems that let economic innovation carry cultural weight. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  lineage:
-    "Disciple of Mark Simon — a protégé of Peter Drucker and Tom Patterson.",
+  bio: "Three decades at the intersection of culture, economics, generosity, and Web3 — building integrated systems where strategy, capital, and conviction move together. A StratOP practitioner and meta-strategist in the lineage of Mark Simon (himself a disciple of Peter Drucker and Tom Patterson). Finance Sector Lead for The UP Movement, architect of the Giver Army through GiveSendGo Charities, and a founding partner in Web3 commerce infrastructure. The through-line across every mandate: inspire hope and belonging so that communities flourish.",
 };
 
 export const partners: Partner[] = [
   {
+    name: "Mark Simon",
+    line: "Strategist and mentor; former board chair of a major denomination and industrial real estate leader; protégé of Peter Drucker and Tom Patterson.",
+  },
+  {
+    name: "Mike Larkin, PhD",
+    line: "Former leader of an international mission movement and university president; institutional leadership and organizational scale.",
+  },
+  {
     name: "Lynn",
-    role: "Partner",
-    mandate: "Owns the operating discipline.", // PLACEHOLDER mandate — sharpen to Lynn's actual charge.
-    bio:
-      // PLACEHOLDER — replace with Lynn's final bio.
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+    line: "International leadership consultant; marketing strategist and finance leader.",
   },
   {
     name: "Dan",
-    role: "Partner",
-    mandate: "Owns the capital architecture.", // PLACEHOLDER mandate — sharpen to Dan's actual charge.
-    bio:
-      // PLACEHOLDER — replace with Dan's final bio.
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit.",
+    line: "Strategic development and management consultant; culture and organizational strategy.",
   },
 ];
 
-/**
- * The bench: advisors and collaborators, rendered as a roster.
- * PLACEHOLDER entries — replace names/domains, add as many as earned.
- */
+/** The bench: advisors and collaborators, rendered as a roster. */
 export const advisors: Advisor[] = [
-  { name: "Advisor Name", domain: "Global markets & sovereign strategy" },
-  { name: "Advisor Name", domain: "Agricultural value chains, Africa" },
-  { name: "Advisor Name", domain: "Web3 & reward infrastructure" },
-  { name: "Advisor Name", domain: "Next-generation education" },
-  { name: "Collaborator Name", domain: "Church-anchored development" },
-  { name: "Collaborator Name", domain: "Family office & stewardship" },
+  { name: "David Ziyambi", domain: "Global markets & sovereign strategy" },
+  { name: "Will Fobbs", domain: "Impact funding & infrastructure bonds" },
+  { name: "Alexander Karam", domain: "Agricultural value chains, Africa" },
+  { name: "Joel Cunningham", domain: "Agricultural value chains, Africa" },
+  { name: "James Kramer", domain: "Web3 & reward infrastructure" },
+  { name: "Rene Cunningham", domain: "Next-generation education" },
+  { name: "Beat Baumann", domain: "Church-anchored development" },
+  { name: "Colby Gilmore", domain: "Family office & stewardship" },
+  { name: "Richard Lackey", domain: "International finance & agricultural stewardship" },
+  { name: "Jason Fisher", domain: "Agritech & Open.Ag AI" },
 ];

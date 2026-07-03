@@ -11,6 +11,11 @@ export function Team() {
           <h2 className="mt-8 max-w-3xl font-serif text-4xl font-light leading-tight text-ink sm:text-5xl">
             One thesis. A firm built to carry it.
           </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone">
+            At the seam of culture and economics, we build the systems that let
+            economic innovation carry cultural weight — so communities
+            flourish.
+          </p>
         </Reveal>
 
         {/* Principal — full-width editorial statement, not a card */}
@@ -31,36 +36,31 @@ export function Team() {
               <p className="mt-5 text-base leading-relaxed text-ink/70">
                 {principal.bio}
               </p>
-              {principal.lineage && (
-                <p className="mt-5 border-l-2 border-gold pl-4 text-sm italic text-stone">
-                  {principal.lineage}
-                </p>
-              )}
             </div>
           </div>
         </Reveal>
 
-        {/* Partners — ruled rows, each led by a mandate */}
-        <ul className="mt-14">
+        {/* Partners — ruled rows: named principals who carry the work */}
+        <Reveal>
+          <div className="mt-16 flex flex-wrap items-baseline justify-between gap-4 border-t border-ink/15 pt-10">
+            <h3 className="font-serif text-2xl font-light text-ink">
+              Partners
+            </h3>
+            <p className="text-sm text-stone">
+              Named principals who carry the work.
+            </p>
+          </div>
+        </Reveal>
+        <ul className="mt-4">
           {partners.map((partner, i) => (
-            <Reveal as="li" key={partner.name} delay={i * 0.08}>
-              <div className="grid gap-6 border-t border-ink/15 py-10 md:grid-cols-12">
-                <div className="md:col-span-5">
-                  <h3 className="font-serif text-3xl font-light text-ink">
-                    {partner.name}
-                  </h3>
-                  <p className="mt-2 text-sm uppercase tracking-widest2 text-gold">
-                    {partner.role}
-                  </p>
-                </div>
-                <div className="md:col-span-6 md:col-start-7">
-                  <p className="font-serif text-xl font-light leading-snug text-ink">
-                    {partner.mandate}
-                  </p>
-                  <p className="mt-4 text-base leading-relaxed text-ink/70">
-                    {partner.bio}
-                  </p>
-                </div>
+            <Reveal as="li" key={partner.name} delay={i * 0.06}>
+              <div className="grid gap-3 border-t border-ink/10 py-7 md:grid-cols-12 md:gap-8">
+                <h4 className="font-serif text-2xl font-light text-ink md:col-span-4">
+                  {partner.name}
+                </h4>
+                <p className="text-base leading-relaxed text-ink/70 md:col-span-7 md:col-start-6">
+                  {partner.line}
+                </p>
               </div>
             </Reveal>
           ))}
@@ -68,7 +68,7 @@ export function Team() {
 
         {/* Advisors & Collaborators — the bench, rendered as a roster */}
         <Reveal>
-          <div className="border-t border-ink/15 pt-10">
+          <div className="mt-12 border-t border-ink/15 pt-10">
             <div className="flex flex-wrap items-baseline justify-between gap-4">
               <h3 className="font-serif text-2xl font-light text-ink">
                 Advisors &amp; Collaborators
