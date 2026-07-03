@@ -6,34 +6,35 @@ export function Team() {
     <section id="team" className="section">
       <div className="container-editorial">
         <Reveal>
-          <p className="eyebrow">The Firm</p>
+          <p className="eyebrow">The Approach</p>
           <hr className="rule-gold mt-6" />
           <h2 className="mt-8 max-w-3xl font-serif text-4xl font-light leading-tight text-ink sm:text-5xl">
-            One thesis. A firm built to carry it.
+            Your organization is the hero. We are the guide.
           </h2>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-stone">
-            At the seam of culture and economics, we build the systems that let
-            economic innovation carry cultural weight — so communities
+            You carry the calling; we have walked the road. At the seam of
+            culture and economics, we bring the systems that let economic
+            innovation carry cultural weight — so the communities you serve
             flourish.
           </p>
         </Reveal>
 
-        {/* Principal — full-width editorial statement, not a card */}
+        {/* Founder — same row structure and scale as every partner */}
         <Reveal>
-          <div className="mt-16 grid gap-8 border-t border-ink/20 pt-10 md:grid-cols-12">
-            <div className="md:col-span-5">
+          <div className="mt-16 grid gap-3 border-t border-ink/15 py-7 md:grid-cols-12 md:gap-8">
+            <div className="md:col-span-4">
               <h3 className="font-serif text-2xl font-light text-ink">
                 {principal.name}
               </h3>
-              <p className="mt-3 text-sm uppercase tracking-widest2 text-gold">
+              <p className="mt-2 text-xs uppercase tracking-widest2 text-gold">
                 {principal.role}
               </p>
             </div>
-            <div className="md:col-span-6 md:col-start-7">
-              <p className="font-serif text-2xl font-light leading-snug text-ink">
+            <div className="md:col-span-7 md:col-start-6">
+              <p className="text-base font-medium text-ink">
                 {principal.mandate}
               </p>
-              <p className="mt-5 text-base leading-relaxed text-ink/70">
+              <p className="mt-3 text-base leading-relaxed text-ink/70">
                 {principal.bio}
               </p>
             </div>
@@ -42,7 +43,7 @@ export function Team() {
 
         {/* Partners — ruled rows: named principals who carry the work */}
         <Reveal>
-          <div className="mt-16 flex flex-wrap items-baseline justify-between gap-4 border-t border-ink/15 pt-10">
+          <div className="mt-8 flex flex-wrap items-baseline justify-between gap-4 border-t border-ink/15 pt-10">
             <h3 className="font-serif text-2xl font-light text-ink">
               Partners
             </h3>

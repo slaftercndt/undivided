@@ -6,7 +6,7 @@ export function Approach() {
       <div className="container-editorial">
         <div className="grid gap-12 md:grid-cols-12">
           <Reveal className="md:col-span-5">
-            <p className="eyebrow">Approach</p>
+            <p className="eyebrow">The Process</p>
             <hr className="rule-gold mt-6" />
             <h2 className="mt-8 font-serif text-4xl font-light leading-tight sm:text-5xl">
               The Strategic Operating Process
