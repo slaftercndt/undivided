@@ -22,7 +22,7 @@ export function Team() {
         <Reveal>
           <div className="mt-16 grid gap-8 border-t border-ink/20 pt-10 md:grid-cols-12">
             <div className="md:col-span-5">
-              <h3 className="font-serif text-4xl font-light text-ink sm:text-5xl">
+              <h3 className="font-serif text-2xl font-light text-ink">
                 {principal.name}
               </h3>
               <p className="mt-3 text-sm uppercase tracking-widest2 text-gold">
