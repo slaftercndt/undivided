@@ -26,7 +26,7 @@ export type Advisor = {
  */
 
 export const principal: Principal = {
-  name: "Founder", // PLACEHOLDER — replace with the founder's name.
+  name: "Nathan Slafter",
   role: "Founder & Principal",
   mandate: "Sets the thesis. Answers for the work.",
   bio: "Three decades at the intersection of culture, economics, generosity, and Web3 — building integrated systems where strategy, capital, and conviction move together. A StratOP practitioner and meta-strategist in the lineage of Mark Simon (himself a disciple of Peter Drucker and Tom Patterson). Finance Sector Lead for The UP Movement, architect of the Giver Army through GiveSendGo Charities, and a founding partner in Web3 commerce infrastructure. The through-line across every mandate: inspire hope and belonging so that communities flourish.",
@@ -42,11 +42,11 @@ export const partners: Partner[] = [
     line: "Former leader of an international mission movement and university president; institutional leadership and organizational scale.",
   },
   {
-    name: "Lynn",
+    name: "Lynne Knight",
     line: "International leadership consultant; marketing strategist and finance leader.",
   },
   {
-    name: "Dan",
+    name: "Dan Steege",
     line: "Strategic development and management consultant; culture and organizational strategy.",
   },
 ];
