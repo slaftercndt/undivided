@@ -9,10 +9,26 @@ type Fields = {
   name: string;
   email: string;
   organization: string;
+  intent: string;
   message: string;
 };
 
-const empty: Fields = { name: "", email: "", organization: "", message: "" };
+/** Inquiry routing — arrives pre-sorted so it can go to the right initiative. */
+const intents = [
+  "Partner with Undivided",
+  "Explore the UP Movement",
+  "Give through the Giver Army",
+  "Media & speaking",
+  "Other",
+] as const;
+
+const empty: Fields = {
+  name: "",
+  email: "",
+  organization: "",
+  intent: intents[0],
+  message: "",
+};
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -127,6 +143,28 @@ export function Connect() {
                   className={inputClass}
                   autoComplete="organization"
                 />
+
+                <div>
+                  <label
+                    htmlFor="intent"
+                    className="block text-xs uppercase tracking-widest2 text-parchment/60"
+                  >
+                    I&apos;m reaching out to
+                  </label>
+                  <select
+                    id="intent"
+                    value={fields.intent}
+                    onChange={(e) => update("intent", e.target.value)}
+                    className={`${inputClass} cursor-pointer appearance-none text-parchment [&>option]:text-ink`}
+                  >
+                    {intents.map((intent) => (
+                      <option key={intent} value={intent}>
+                        {intent}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
                 <div>
                   <label
                     htmlFor="message"

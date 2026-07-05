@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Thesis } from "@/components/Thesis";
 import { Approach } from "@/components/Approach";
 import { Team } from "@/components/Team";
+import { Plan } from "@/components/Plan";
 import { Solutions } from "@/components/Solutions";
 import { Capabilities } from "@/components/Capabilities";
 import { Connect } from "@/components/Connect";
@@ -17,6 +18,7 @@ export default function Home() {
         <Thesis />
         <Approach />
         <Team />
+        <Plan />
         <Solutions />
         <Capabilities />
         <Connect />

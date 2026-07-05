@@ -1,4 +1,5 @@
 import { navLinks } from "@/lib/nav";
+import { Dispatches } from "./Dispatches";
 
 export function Footer() {
   return (
@@ -16,6 +17,8 @@ export function Footer() {
               Culture and economics, unified — one system, managed as one.
             </p>
           </div>
+
+          <Dispatches />
 
           <nav aria-label="Footer">
             <ul className="flex flex-wrap gap-x-8 gap-y-3">

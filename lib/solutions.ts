@@ -22,6 +22,7 @@ export const solutions: Solution[] = [
     category: "Hub-based systems",
     description:
       "A framework that scales hubs to uplift nations — economic anchors in agriculture, construction, and mining set alongside church-anchored community development, next-generation education, and value-chain enrichment.",
+    href: "https://theupmovement.org",
     standing: "Active hubs across several African countries",
   },
   {
@@ -36,7 +37,21 @@ export const solutions: Solution[] = [
     name: "GiveSendGo Charities",
     category: "Collaborative giving funds",
     description:
-      "Meeting urgent need and sharing the hope of Jesus through generosity — collaborative funds mobilizing a global “Giver Army.”",
+      "Meeting urgent need and sharing the hope of Jesus through generosity — collaborative funds moving where the need is greatest.",
+    href: "https://givesendgo.org",
     standing: "Multiple funds across 75 countries",
+  },
+  {
+    name: "The Giver Army",
+    category: "Collaborative generosity",
+    description:
+      "A global movement of givers mobilized to meet urgent need — generosity organized as infrastructure, not impulse.",
+    href: "https://giver.army",
+  },
+  {
+    name: "Global Commerce",
+    category: "Multinational commerce",
+    description:
+      "Active engagements in multinational commerce — anchoring culture and economics in markets where both must move together.",
   },
 ];

@@ -35,6 +35,7 @@ type ContactPayload = {
   name?: unknown;
   email?: unknown;
   organization?: unknown;
+  intent?: unknown;
   message?: unknown;
 };
 
@@ -56,6 +57,7 @@ export async function POST(request: Request) {
   const name = asString(body.name);
   const email = asString(body.email);
   const organization = asString(body.organization);
+  const intent = asString(body.intent);
   const message = asString(body.message);
 
   if (!name || !email || !message || !emailRe.test(email)) {
@@ -70,6 +72,7 @@ export async function POST(request: Request) {
     name,
     email,
     organization: organization || "—",
+    intent: intent || "General",
     message,
     at: new Date().toISOString(),
   });

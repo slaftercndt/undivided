@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -29,11 +30,14 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "Undivided",
+    "Nathan Slafter",
     "grand strategy",
     "culture and economics",
     "strategic operating process",
     "economic innovation",
     "cultural reformation",
+    "The UP Movement",
+    "Giver Army",
   ],
   authors: [{ name: "Undivided" }],
   alternates: {
@@ -75,6 +79,37 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+/**
+ * JSON-LD: establishes undivided.global as the canonical center of the
+ * Undivided / Nathan Slafter graph for search engines.
+ */
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "Undivided",
+      url: siteUrl,
+      description,
+      founder: { "@id": `${siteUrl}/#founder` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#founder`,
+      name: "Nathan Slafter",
+      jobTitle: "Founder & Principal",
+      worksFor: { "@id": `${siteUrl}/#organization` },
+      affiliation: [
+        { "@type": "Organization", name: "The UP Movement", url: "https://theupmovement.org" },
+        { "@type": "Organization", name: "The Giver Army", url: "https://giver.army" },
+        { "@type": "Organization", name: "GiveSendGo Charities", url: "https://givesendgo.org" },
+        { "@type": "Organization", name: "Conduit Network", url: "https://cndt.io" },
+      ],
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -82,7 +117,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
