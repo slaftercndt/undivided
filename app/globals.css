@@ -7,6 +7,11 @@
   --gold: #b38e3d;
   --parchment: #f5f1e8;
   --stone: #6b6e70;
+  /* shared section gutter */
+  --gutter: clamp(24px, 5vw, 88px);
+  /* generic font aliases — map to the next/font variables set in layout.tsx */
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-inter);
 }
 
 @layer base {
