@@ -1,0 +1,17 @@
+{
+  "$comment": "Taxonomy schema for the Avodah.cloud agentic layer. Every corpus paper tagged against this so retrieval respects the thesis spine AND the attribution boundary.",
+  "paper": {
+    "id": "string",
+    "title": "string",
+    "tier": "00-10",
+    "author": "Nelson | Hiles | ConduitNetwork | Kramer | Sweetbridge | Undivided",
+    "ip_class": "substrate (cite) | undivided (own)",
+    "spine_stage": "1-trapped | 2-conversion | 3-kinetic | supporting",
+    "primitive": ["distributed-authority", "computable-contracts", "digital-twin", "synchronized-accounting", "poea", "poeg", "none"],
+    "audience_gate": "allocator | technical | sovereign | all",
+    "maturity": "concept | specified | validated",
+    "canonical": "boolean",
+    "supersedes": "id | null",
+    "flags": ["needs-sourcing", "faith-framing-translate", "verify-name"]
+  }
+}

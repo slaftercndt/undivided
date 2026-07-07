@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" viewBox="0 0 680 400" role="img">
+<title>Five-surface synchronized accounting</title>
+<desc>A single computable state change projects atomically onto five peer surfaces — legal, identity, accounting, payment, risk — so state is continuously provable and asymmetry premiums collapse. Design system: ink #1C2224, gold #B38E3D, parchment #F5F1E8.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#1C2224" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<style>text{font-family:Inter,system-ui,sans-serif;fill:#1C2224}.th{font-size:14px;font-weight:500}.ts{font-size:12px;fill:#5F5E5A}</style>
+<rect x="240" y="40" width="200" height="60" rx="12" fill="#F5F1E8" stroke="#B38E3D" stroke-width="0.75"/>
+<text class="th" x="340" y="66" text-anchor="middle">One computable event</text>
+<text class="ts" x="340" y="86" text-anchor="middle">audit once, prove many</text>
+<line x1="300" y1="100" x2="120" y2="196" stroke="#1C2224" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="325" y1="100" x2="255" y2="196" stroke="#1C2224" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="340" y1="100" x2="340" y2="196" stroke="#1C2224" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="355" y1="100" x2="425" y2="196" stroke="#1C2224" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="380" y1="100" x2="560" y2="196" stroke="#1C2224" stroke-width="1.5" marker-end="url(#arrow)"/>
+<g fill="#F5F1E8" stroke="#B38E3D" stroke-width="0.75">
+<rect x="40" y="200" width="110" height="56" rx="10"/><rect x="185" y="200" width="110" height="56" rx="10"/>
+<rect x="285" y="200" width="110" height="56" rx="10"/><rect x="385" y="200" width="110" height="56" rx="10"/>
+<rect x="530" y="200" width="110" height="56" rx="10"/></g>
+<text class="th" x="95" y="224" text-anchor="middle">Legal</text><text class="ts" x="95" y="242" text-anchor="middle">rights, statutes</text>
+<text class="th" x="240" y="224" text-anchor="middle">Identity</text><text class="ts" x="240" y="242" text-anchor="middle">who may act</text>
+<text class="th" x="340" y="224" text-anchor="middle">Accounting</text><text class="ts" x="340" y="242" text-anchor="middle">books, register</text>
+<text class="th" x="440" y="224" text-anchor="middle">Payment</text><text class="ts" x="440" y="242" text-anchor="middle">settlement</text>
+<text class="th" x="585" y="224" text-anchor="middle">Risk</text><text class="ts" x="585" y="242" text-anchor="middle">live state</text>
+<rect x="140" y="310" width="400" height="60" rx="12" fill="#F1EFE8" stroke="#B38E3D" stroke-width="0.75"/>
+<text class="th" x="340" y="336" text-anchor="middle">Asymmetry closes, assets re-price</text>
+<text class="ts" x="340" y="356" text-anchor="middle">the spread between opaque and provable is the return</text>
+</svg>

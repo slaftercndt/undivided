@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" viewBox="0 0 680 470" role="img">
+<title>The three-vehicle flywheel: CDM, MS, and MRN</title>
+<desc>CDM creates value, MS creates liquidity, MRN creates demand; demand pulls more assets back into CDM, forming a self-reinforcing loop. Design system: ink #1C2224, gold #B38E3D, parchment #F5F1E8.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#1C2224" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<style>text{font-family:Inter,system-ui,sans-serif;fill:#1C2224}.th{font-size:14px;font-weight:500}.ts{font-size:12px;fill:#5F5E5A}</style>
+<rect x="250" y="40" width="180" height="72" rx="12" fill="#F5F1E8" stroke="#B38E3D" stroke-width="0.75"/>
+<text class="th" x="340" y="66" text-anchor="middle">CDM · the organiser</text>
+<text class="ts" x="340" y="86" text-anchor="middle">Assets to computable twins</text>
+<text class="ts" x="340" y="102" text-anchor="middle">Value · CNDT</text>
+<rect x="450" y="200" width="180" height="72" rx="12" fill="#F5F1E8" stroke="#B38E3D" stroke-width="0.75"/>
+<text class="th" x="540" y="226" text-anchor="middle">MS · the banker</text>
+<text class="ts" x="540" y="246" text-anchor="middle">Twins to bonds for capital</text>
+<text class="ts" x="540" y="262" text-anchor="middle">Liquidity · MDPN</text>
+<rect x="50" y="200" width="180" height="72" rx="12" fill="#F5F1E8" stroke="#B38E3D" stroke-width="0.75"/>
+<text class="th" x="140" y="226" text-anchor="middle">MRN · demand engine</text>
+<text class="ts" x="140" y="246" text-anchor="middle">Rewards to real ownership</text>
+<text class="ts" x="140" y="262" text-anchor="middle">Demand · SWCx</text>
+<path d="M430 96 C 500 120, 545 150, 540 198" fill="none" stroke="#1C2224" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M450 250 C 340 300, 340 300, 232 250" fill="none" stroke="#1C2224" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M140 198 C 135 150, 180 120, 250 96" fill="none" stroke="#1C2224" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="270" y="196" width="140" height="80" rx="12" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.75"/>
+<text class="th" x="340" y="224" text-anchor="middle">One loop</text>
+<text class="ts" x="340" y="244" text-anchor="middle">Every treasury holds</text>
+<text class="ts" x="340" y="260" text-anchor="middle">all three tokens</text>
+<text class="ts" x="500" y="152" text-anchor="middle">creates liquidity</text>
+<text class="ts" x="340" y="317" text-anchor="middle">demand pulls more assets in</text>
+<text class="ts" x="180" y="152" text-anchor="middle">creates demand</text>
+<rect x="120" y="370" width="440" height="60" rx="12" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="0.75"/>
+<text class="th" x="340" y="396" text-anchor="middle">Alignment is structural, not negotiated</text>
+<text class="ts" x="340" y="416" text-anchor="middle">Substrate IP: Conduit / Scott Nelson · fund application: Undivided</text>
+</svg>
