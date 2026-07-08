@@ -1,32 +1,17 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
 
 /**
- * Contact form handler.
+ * Contact form handler — Resend-ready.
  *
- * Placeholder implementation: validates input, logs it server-side, and
- * returns 200. No email is sent yet.
+ * With env vars set (Vercel → Project → Settings → Environment Variables):
+ *   RESEND_API_KEY     — from https://resend.com (verify the sending domain)
+ *   CONTACT_TO_EMAIL   — where inquiries land (e.g. hello@undivided.global)
+ *   CONTACT_FROM_EMAIL — optional; defaults to onboarding@resend.dev, which
+ *                        works before undivided.global is verified in Resend
  *
- * TODO: wire up a real provider before launch. Two common options:
- *
- *   Resend (https://resend.com):
- *     import { Resend } from "resend";
- *     const resend = new Resend(process.env.RESEND_API_KEY);
- *     await resend.emails.send({
- *       from: "Undivided <hello@undivided.global>",
- *       to: process.env.CONTACT_TO_EMAIL!,
- *       subject: `New inquiry from ${name}`,
- *       text: `${name} <${email}> (${organization})\n\n${message}`,
- *     });
- *
- *   Formspree (https://formspree.io):
- *     await fetch(process.env.FORMSPREE_ENDPOINT!, {
- *       method: "POST",
- *       headers: { "Content-Type": "application/json" },
- *       body: JSON.stringify({ name, email, organization, message }),
- *     });
- *
- * Set the relevant secrets in Vercel → Project → Settings → Environment
- * Variables (see README).
+ * ...inquiries are emailed. Without them, the handler logs and returns 200
+ * so the form keeps working in development.
  */
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -57,7 +42,7 @@ export async function POST(request: Request) {
   const name = asString(body.name);
   const email = asString(body.email);
   const organization = asString(body.organization);
-  const intent = asString(body.intent);
+  const intent = asString(body.intent) || "General";
   const message = asString(body.message);
 
   if (!name || !email || !message || !emailRe.test(email)) {
@@ -67,15 +52,47 @@ export async function POST(request: Request) {
     );
   }
 
-  // Placeholder: log the inquiry. Replace with a real provider (see TODO above).
-  console.log("[contact] new inquiry", {
-    name,
-    email,
-    organization: organization || "—",
-    intent: intent || "General",
-    message,
-    at: new Date().toISOString(),
-  });
+  const apiKey = process.env.RESEND_API_KEY;
+  const to = process.env.CONTACT_TO_EMAIL;
+
+  if (apiKey && to) {
+    try {
+      const resend = new Resend(apiKey);
+      const { error } = await resend.emails.send({
+        from:
+          process.env.CONTACT_FROM_EMAIL ??
+          "Undivided <onboarding@resend.dev>",
+        to,
+        replyTo: email,
+        subject: `[${intent}] Inquiry from ${name}`,
+        text: [
+          `Name: ${name}`,
+          `Email: ${email}`,
+          `Organization: ${organization || "—"}`,
+          `Intent: ${intent}`,
+          "",
+          message,
+        ].join("\n"),
+      });
+      if (error) throw new Error(error.message);
+    } catch (err) {
+      console.error("[contact] send failed", err);
+      return NextResponse.json(
+        { ok: false, error: "Delivery failed. Please try again." },
+        { status: 502 },
+      );
+    }
+  } else {
+    // Dev / unconfigured fallback: log only.
+    console.log("[contact] new inquiry (email not configured)", {
+      name,
+      email,
+      organization: organization || "—",
+      intent,
+      message,
+      at: new Date().toISOString(),
+    });
+  }
 
   return NextResponse.json({ ok: true });
 }

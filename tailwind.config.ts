@@ -19,6 +19,10 @@ const config: Config = {
       fontFamily: {
         serif: ["var(--font-fraunces)", "Georgia", "serif"],
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        // named families used by the Kinetic subpage (per its INTEGRATION.md)
+        fraunces: ["var(--font-fraunces)", "Georgia", "serif"],
+        cormorant: ["var(--font-cormorant)", "Georgia", "serif"],
+        inter: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       maxWidth: {
         prose: "68ch",
