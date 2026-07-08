@@ -81,10 +81,11 @@ documented inline:
 
 **Resend** — set in Vercel → Project → Settings → Environment Variables:
 
-| Variable           | Example                        |
-| ------------------ | ------------------------------ |
-| `RESEND_API_KEY`   | `re_...`                       |
-| `CONTACT_TO_EMAIL` | `hello@undivided.global`       |
+| Variable             | Example                                          |
+| -------------------- | ------------------------------------------------ |
+| `RESEND_API_KEY`     | `re_...`                                         |
+| `CONTACT_TO_EMAIL`   | `hello@undivided.global`                         |
+| `CONTACT_FROM_EMAIL` | optional — defaults to `onboarding@resend.dev`   |
 
 **Formspree** — set:
 
