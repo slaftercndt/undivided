@@ -53,8 +53,9 @@ export function Solutions() {
 
         <Reveal>
           <p className="mt-12 max-w-2xl text-base italic text-parchment/50">
-            Including but not limited to the above — Humara, Kingdom Chicken
-            Africa, and future solutions join as the work grows.
+            Including but not limited to the above — Hamara, GCN,
+            PartnersWorldwide, BSH, KCA, and future solutions join as the work
+            grows.
           </p>
         </Reveal>
       </div>
