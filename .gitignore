@@ -18,6 +18,10 @@
 .DS_Store
 *.pem
 
+# kinetic corpus: PDFs are regenerable renders; the .docx IS committed
+*.pdf
+page-*.jpg
+
 # debug
 npm-debug.log*
 yarn-debug.log*
